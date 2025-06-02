@@ -5,18 +5,22 @@
 To write a python program using brute force method of searching for the given substring in the main string.
 
 ## Algorithm
-
-1.Take two inputs: the main string and the substring to search for.
-
-2.Create a regex pattern using the substring.
-
-3.Search for the first match of the pattern in the main string.
-
-4.If a match is found.Print the starting index of the match.
-
-5.Continue searching for the next match, starting just after the current match.
-
-6.Repeat step 4 until no more matches are found.
+1. Start
+2. Input the main string 'string'.
+3. Input the substring 'sub'.
+4. Initialize:
+   - l ← length of string
+   - ls ← length of sub
+   - found ← false
+5. For each index k from 0 to l - ls (inclusive), do:
+   a. Extract the substring of 'string' from index k to k + ls.
+   b. Compare it with 'sub'.
+   c. If they are equal:
+      i. Print "Found at index k"
+      ii. Set found ← true
+6. If found is still false after the loop ends:
+   - Print "Substring not found"
+7. End
 
 ## Program:
 
@@ -26,16 +30,21 @@ To write a python program using brute force method of searching for the given su
 # Register Number: 212222240072
 */
 
-import re
 def match(string,sub):
-    pattern = re.compile(str2)
-    r = pattern.search(str1)
-    while r:
-        print("Found at index {}".format(r.start()))
-        r = pattern.search(str1,r.start()+1)    
+    l = len(string)
+    ls = len(sub)
+    start = sub[0];
+
+    for k in range(l-ls+1):
+        if start==string[k]:
+
+            if string[k:k+ls]==sub:
+                print(f"Found at index {k}")
+    # print("Substring not found")
 
 str1=input()
 str2=input()
+
 ```
 
 ## Output:
